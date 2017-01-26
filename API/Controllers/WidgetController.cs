@@ -50,7 +50,7 @@ namespace Onion.Controllers
 
                 var widget = await _widgetApplicationService.Create(model.Name, model.ConvertWidgetType());
 
-                return Ok(widget);
+                return Ok(new WidgetReadModel(widget));
             }
             catch (AggregateException aggEx)
             {
